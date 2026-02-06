@@ -1,0 +1,42 @@
+package com.entrenemos.configuration;
+
+import com.entrenemos.security.JwtFilter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtFilter jwtFilter) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/coach/**").hasRole("ENTRENADOR")
+                        .requestMatchers("/api/usuarios/*/foto-perfil").authenticated()
+                        .requestMatchers("/api/usuarios/**").hasRole("ADMIN")
+                        .requestMatchers("/api/roles/**").hasRole("ADMIN")
+                        .requestMatchers("/api/plan-usuario/**").authenticated()
+                        .requestMatchers("/api/mensajes/**").authenticated()
+                        .requestMatchers("/ws/**").permitAll()
+                        .requestMatchers("/uploads/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                .formLogin(form -> form.disable())
+                .httpBasic(basic -> basic.disable());
+
+        return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
