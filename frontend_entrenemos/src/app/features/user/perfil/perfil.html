@@ -1,0 +1,78 @@
+<div class="app-container">
+    <app-header />
+
+    <main class="main-content">
+        @if (loading) {
+        <div class="loading-container">
+            <div class="spinner"></div>
+            <p>Cargando perfil...</p>
+        </div>
+        } @else if (error) {
+        <div class="error-container">
+            <p>{{ error }}</p>
+            <button (click)="cargarDatos()" class="retry-button">Reintentar</button>
+        </div>
+        } @else if (usuario) {
+        <!-- Información del usuario -->
+        <section class="profile-section">
+            <div class="profile-header">
+                <h1 class="page-title">Mi Perfil</h1>
+            </div>
+            <app-user-profile [usuario]="usuario" (fotoActualizada)="onFotoActualizada($event)" />
+        </section>
+
+        <!-- Información detallada -->
+        <section class="info-section">
+            <div class="info-card">
+                <div class="info-icon">📧</div>
+                <div class="info-content">
+                    <p class="info-label">Email</p>
+                    <p class="info-value">{{ usuario.email }}</p>
+                </div>
+            </div>
+
+            @if (usuario.telefono) {
+            <div class="info-card">
+                <div class="info-icon">📱</div>
+                <div class="info-content">
+                    <p class="info-label">Teléfono</p>
+                    <p class="info-value">{{ usuario.telefono }}</p>
+                </div>
+            </div>
+            }
+
+            @if (usuario.fechaRegistro) {
+            <div class="info-card">
+                <div class="info-icon">📅</div>
+                <div class="info-content">
+                    <p class="info-label">Miembro desde</p>
+                    <p class="info-value">{{ formatearFecha(usuario.fechaRegistro) }}</p>
+                </div>
+            </div>
+            }
+
+            <div class="info-card">
+                <div class="info-icon">👤</div>
+                <div class="info-content">
+                    <p class="info-label">Rol</p>
+                    <p class="info-value">{{ usuario.rol }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acciones -->
+        <section class="actions-section">
+            <button class="logout-button" (click)="cerrarSesion()">
+                <span class="logout-text">Cerrar Sesión</span>
+            </button>
+        </section>
+        } @else {
+        <div class="empty-container">
+            <p>No se pudo cargar la información del usuario</p>
+            <button (click)="cargarDatos()" class="retry-button">Reintentar</button>
+        </div>
+        }
+    </main>
+
+    <app-bottom-nav />
+</div>

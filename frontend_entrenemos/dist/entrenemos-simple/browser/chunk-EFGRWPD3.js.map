@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/admin/configuracion/configuracion.component.ts", "src/app/features/admin/configuracion/configuracion.component.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-configuracion',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './configuracion.component.html',\r\n  styleUrl: './configuracion.component.css'\r\n})\r\nexport class ConfiguracionComponent {\r\n\r\n}\r\n", "<p>configuracion works!</p>\r\n"],
+  "mappings": ";;;;;;;;;;;;AASM,IAAO,yBAAP,MAAO,wBAAsB;;qCAAtB,yBAAsB;EAAA;yEAAtB,yBAAsB,WAAA,CAAA,CAAA,mBAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,gCAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACTnC,MAAA,4BAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,sBAAA;AAAoB,MAAA,0BAAA;;;;;sEDSV,wBAAsB,CAAA;UAPlC;uBACW,qBAAmB,YACjB,MAAI,SACP,CAAA,GAAE,UAAA,kCAAA,CAAA;;;;6EAIA,wBAAsB,EAAA,WAAA,0BAAA,UAAA,mEAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

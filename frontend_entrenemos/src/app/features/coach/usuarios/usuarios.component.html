@@ -1,0 +1,46 @@
+<div class="usuarios-admin-container">
+  <div class="header-section">
+    <h1>Mis Atletas</h1>
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+    <button class="btn-reintentar" (click)="cargarMisAtletas()">
+      🔄 Reintentar
+    </button>
+  </div>
+
+  <!-- Cargando -->
+  <div *ngIf="cargando" class="loading-container">
+    <div class="spinner"></div>
+    <p>Cargando usuarios...</p>
+  </div>
+
+  <!-- Tabla de usuarios -->
+  <div *ngIf="!cargando && !error && usuarios.length > 0" class="usuarios-table-container">
+    <table class="usuarios-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Rol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of usuarios">
+          <td>{{ u.nombre }}</td>
+          <td>{{ u.email }}</td>
+          <td>
+            <span class="rol-badge" [ngClass]="u.rol.toLowerCase()">{{ u.rol }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Sin usuarios -->
+  <div *ngIf="!cargando && !error && usuarios.length === 0">
+    <p>No hay usuarios para mostrar</p>
+  </div>
+</div>

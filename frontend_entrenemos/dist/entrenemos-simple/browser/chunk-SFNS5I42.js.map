@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/user/tienda/tienda.ts", "src/app/features/user/tienda/tienda.html"],
+  "sourcesContent": ["import { Component } from \"@angular/core\";\r\nimport { Header } from \"../../../shared/components/header/header\";\r\nimport { BottomNav } from \"../../../shared/components/bottom-nav/bottom-nav\";\r\n\r\n@Component({\r\n  selector: \"app-tienda\",\r\n  imports: [Header, BottomNav],\r\n  templateUrl: \"./tienda.html\",\r\n  styleUrl: \"./tienda.css\",\r\n})\r\nexport class Tienda {}\r\n", "<div class=\"page-wrapper\">\r\n    <app-header />\r\n    <div class=\"page-container\">\r\n        <h1>🛒 Tienda</h1>\r\n        <p>Compra planes premium y suplementos</p>\r\n    </div>\r\n    <app-bottom-nav />\r\n</div>"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAUM,IAAO,SAAP,MAAO,QAAM;;qCAAN,SAAM;EAAA;yEAAN,SAAM,WAAA,CAAA,CAAA,YAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,QAAA,CAAA,CAAA,GAAA,cAAA,GAAA,CAAA,GAAA,gBAAA,CAAA,GAAA,UAAA,SAAA,gBAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACVnB,MAAA,yBAAA,GAAA,OAAA,CAAA;AACI,MAAA,oBAAA,GAAA,YAAA;AACA,MAAA,yBAAA,GAAA,OAAA,CAAA,EAA4B,GAAA,IAAA;AACpB,MAAA,iBAAA,GAAA,kBAAA;AAAS,MAAA,uBAAA;AACb,MAAA,yBAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,qCAAA;AAAmC,MAAA,uBAAA,EAAI;AAE9C,MAAA,oBAAA,GAAA,gBAAA;AACJ,MAAA,uBAAA;;oBDDY,QAAQ,SAAS,GAAA,QAAA,CAAA,oRAAA,EAAA,CAAA;;;sEAIhB,QAAM,CAAA;UANlB;uBACW,cAAY,SACb,CAAC,QAAQ,SAAS,GAAC,UAAA,qOAAA,QAAA,CAAA,2RAAA,EAAA,CAAA;;;;6EAIjB,QAAM,EAAA,WAAA,UAAA,UAAA,0CAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

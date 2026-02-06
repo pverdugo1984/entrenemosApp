@@ -1,0 +1,19 @@
+<div class="admin-wrapper">
+  <aside class="sidebar">
+    <div class="logo">Admin</div>
+    <nav class="menu">
+      <a routerLink="/admin/usuarios" routerLinkActive="active">Usuarios</a>
+      <a routerLink="/admin/programas" routerLinkActive="active">Programas</a>
+      <a routerLink="/admin/progreso" routerLinkActive="active">Progreso</a>
+      <a routerLink="/admin/comunidad" routerLinkActive="active">Comunidad</a>
+    </nav>
+
+    <button class="logout-button" (click)="cerrarSesion()">
+      <span class="logout-text">Cerrar Sesión</span>
+    </button>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

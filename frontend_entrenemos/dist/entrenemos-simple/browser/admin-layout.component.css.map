@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/admin/admin-layout/admin-layout.component.css"],
+  "sourcesContent": [".admin-container {\r\n  display: flex;\r\n  height: 100vh;\r\n}\r\n\r\n.sidebar {\r\n  width: 250px;\r\n  background: #111;\r\n  color: white;\r\n  padding: 20px;\r\n}\r\n\r\n.sidebar h2 {\r\n  margin-top: 0;\r\n  text-align: center;\r\n}\r\n\r\n.sidebar a {\r\n  display: block;\r\n  color: white;\r\n  margin: 10px 0;\r\n  text-decoration: none;\r\n  padding: 10px;\r\n  border-radius: 5px;\r\n}\r\n\r\n.sidebar a:hover {\r\n  background: #333;\r\n}\r\n\r\n.content {\r\n  flex: 1;\r\n  padding: 20px;\r\n}"],
+  "mappings": ";AAAA,CAAC;AACC,WAAS;AACT,UAAQ;AACV;AAEA,CAAC;AACC,SAAO;AACP,cAAY;AACZ,SAAO;AACP,WAAS;AACX;AAEA,CAPC,QAOQ;AACP,cAAY;AACZ,cAAY;AACd;AAEA,CAZC,QAYQ;AACP,WAAS;AACT,SAAO;AACP,UAAQ,KAAK;AACb,mBAAiB;AACjB,WAAS;AACT,iBAAe;AACjB;AAEA,CArBC,QAqBQ,CAAC;AACR,cAAY;AACd;AAEA,CAAC;AACC,QAAM;AACN,WAAS;AACX;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/admin/progreso/progreso.component.ts", "src/app/features/admin/progreso/progreso.component.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-progreso',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './progreso.component.html',\r\n  styleUrl: './progreso.component.css'\r\n})\r\nexport class ProgresoComponent {\r\n\r\n}\r\n", "<p>progreso works!</p>\r\n"],
+  "mappings": ";;;;;;;;;;;;AASM,IAAO,oBAAP,MAAO,mBAAiB;;qCAAjB,oBAAiB;EAAA;yEAAjB,oBAAiB,WAAA,CAAA,CAAA,cAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,2BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACT9B,MAAA,4BAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,iBAAA;AAAe,MAAA,0BAAA;;;;;sEDSL,mBAAiB,CAAA;UAP7B;uBACW,gBAAc,YACZ,MAAI,SACP,CAAA,GAAE,UAAA,6BAAA,CAAA;;;;6EAIA,mBAAiB,EAAA,WAAA,qBAAA,UAAA,yDAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

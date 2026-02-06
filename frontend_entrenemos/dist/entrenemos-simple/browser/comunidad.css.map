@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/user/comunidad/comunidad.css"],
+  "sourcesContent": [".page-wrapper {\r\n  max-width: 414px;\r\n  margin: 0 auto;\r\n  background: #d3d3d3;\r\n  min-height: 100vh;\r\n}\r\n\r\n.page-container {\r\n  color: black;\r\n  padding: 40px 20px;\r\n  padding-bottom: 100px;\r\n}\r\n"],
+  "mappings": ";AAAA,CAAC;AACC,aAAW;AACX,UAAQ,EAAE;AACV,cAAY;AACZ,cAAY;AACd;AAEA,CAAC;AACC,SAAO;AACP,WAAS,KAAK;AACd,kBAAgB;AAClB;",
+  "names": []
+}

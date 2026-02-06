@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/admin/comunidad/comunidad.component.ts", "src/app/features/admin/comunidad/comunidad.component.html"],
+  "sourcesContent": ["import { CommonModule } from \"@angular/common\";\r\nimport { Component } from \"@angular/core\";\r\nimport { ChatWindowComponent } from \"../../chat/components/chat-window.component\";\r\n\r\n@Component({\r\n  selector: \"app-comunidad\",\r\n  standalone: true,\r\n  imports: [CommonModule, ChatWindowComponent],\r\n  templateUrl: \"./comunidad.component.html\",\r\n  styleUrl: \"./comunidad.component.css\",\r\n})\r\nexport class ComunidadComponent {}\r\n", "<app-chat-window></app-chat-window>"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAWM,IAAO,qBAAP,MAAO,oBAAkB;;qCAAlB,qBAAkB;EAAA;yEAAlB,qBAAkB,WAAA,CAAA,CAAA,eAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,4BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACX/B,MAAA,oBAAA,GAAA,iBAAA;;oBDOY,cAAc,mBAAmB,GAAA,eAAA,EAAA,CAAA;;;sEAIhC,oBAAkB,CAAA;UAP9B;uBACW,iBAAe,YACb,MAAI,SACP,CAAC,cAAc,mBAAmB,GAAC,UAAA,sCAAA,CAAA;;;;6EAIjC,oBAAkB,EAAA,WAAA,sBAAA,UAAA,2DAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

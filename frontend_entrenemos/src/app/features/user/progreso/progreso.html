@@ -1,0 +1,140 @@
+<div class="page-wrapper">
+  <app-header />
+  <div class="page-container">
+    <h1>Mi Progreso</h1>
+
+    <!-- Estado de carga -->
+    @if (cargando) {
+    <div class="estado-carga">
+      <div class="spinner"></div>
+      <p>Cargando tu progreso...</p>
+    </div>
+    }
+
+    <!-- Mensaje de error -->
+    @if (error && !cargando) {
+    <div class="mensaje-error">
+      <p>{{ error }}</p>
+    </div>
+    }
+
+    <!-- Contenido principal -->
+    @if (!cargando && !error) {
+    <div>
+      <!-- Mensaje sin plan activo -->
+      @if (!tienePlanActivo) {
+      <div class="sin-plan-info">
+        <div class="sin-plan-mensaje">
+          <div class="sin-plan-icon">📋</div>
+          <h3>No tienes un plan activo</h3>
+          <p>
+            Para ver tu progreso, necesitas tener un plan de entrenamiento
+            activo. Ve a la página de
+            <a routerLink="/rutina" class="btn-seleccionar-plan">Rutina</a> para
+            seleccionar un plan.
+          </p>
+        </div>
+      </div>
+      }
+
+      <!-- Información del plan activo -->
+      @if (tienePlanActivo && planActivo?.entrenamiento) {
+      <div class="plan-activo-info">
+        <div class="plan-activo-header">
+          <h3>{{ planActivo?.entrenamiento?.nombre }}</h3>
+          @if (planActivo?.entrenamiento?.descripcion) {
+          <p class="plan-descripcion">
+            {{ planActivo?.entrenamiento?.descripcion }}
+          </p>
+          }
+        </div>
+      </div>
+      }
+
+      <!-- Sin progreso (con plan activo) -->
+      @if (tienePlanActivo && progresos.length === 0) {
+      <div class="sin-progreso">
+        <div class="sin-progreso-icon">📊</div>
+        <h2>Aún no tienes progreso registrado</h2>
+        <p>
+          Ve a la página de <a routerLink="/rutina">Rutina</a> para comenzar a
+          registrar tus entrenamientos y ejercicios del plan activo.
+        </p>
+      </div>
+      }
+
+      <!-- Lista de progresos agrupados por ejercicio -->
+      @if (tienePlanActivo && progresos.length > 0) {
+      <div class="progresos-container">
+        <h2 class="seccion-titulo">Historial por Ejercicio</h2>
+
+        @for (grupo of progresosAgrupados; track grupo.ejercicio.id) {
+        <div class="ejercicio-grupo">
+          <div class="ejercicio-header">
+            <h3 class="ejercicio-nombre">{{ grupo.ejercicio.nombre }}</h3>
+            <span class="ejercicio-sesiones"
+              >{{ grupo.totalSesiones }}
+              {{ grupo.totalSesiones === 1 ? "sesión" : "sesiones" }}</span
+            >
+          </div>
+
+          <!-- Mejores marcas -->
+          @if (grupo.mejorPeso || grupo.mejorRepeticiones || grupo.mejorTiempo) {
+          <div class="mejores-marcas">
+            @if (grupo.mejorPeso) {
+            <div class="marca-item">
+              <span class="marca-label">Mejor peso:</span>
+              <span class="marca-value">{{ grupo.mejorPeso }} kg</span>
+            </div>
+            }
+            @if (grupo.mejorRepeticiones) {
+            <div class="marca-item">
+              <span class="marca-label">Mejores repeticiones:</span>
+              <span class="marca-value">{{ grupo.mejorRepeticiones }}</span>
+            </div>
+            }
+            @if (grupo.mejorTiempo) {
+            <div class="marca-item">
+              <span class="marca-label">Mejor tiempo:</span>
+              <span class="marca-value">{{ formatearTiempo(grupo.mejorTiempo) }}</span>
+            </div>
+            }
+          </div>
+          }
+
+          <!-- Historial de registros -->
+          <div class="historial-registros">
+            @for (progreso of grupo.progresos; track progreso.id) {
+            <div class="registro-item">
+              <div class="registro-fecha">
+                {{ formatearFecha(progreso.fecha) }}
+              </div>
+              <div class="registro-metricas">
+                @if (progreso.peso) {
+                <span class="metrica">
+                  💪 {{ progreso.peso }} kg
+                </span>
+                }
+                @if (progreso.repeticiones) {
+                <span class="metrica">
+                  🔄 {{ progreso.repeticiones }} reps
+                </span>
+                }
+                @if (progreso.tiempo) {
+                <span class="metrica">
+                  ⏱️ {{ formatearTiempo(progreso.tiempo) }}
+                </span>
+                }
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        }
+      </div>
+      }
+    </div>
+    }
+  </div>
+  <app-bottom-nav />
+</div>

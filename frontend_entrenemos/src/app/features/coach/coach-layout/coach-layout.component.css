@@ -1,0 +1,105 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f0f4f8; /* color de fondo diferente al admin */
+  font-family: "Stardos Stencil", sans-serif;
+}
+
+/* Sidebar específico para coach */
+.coach-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100vh;
+  background: linear-gradient(180deg, #ff7e5f, #feb47b); /* degradado naranja */
+  color: white;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.menu a.active {
+  background: white;
+  color: #ff7e5f; /* color acorde con el degradado */
+}
+
+/* Botón de logout */
+.logout-button {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 32px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: "Stardos Stencil", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+.logout-icon {
+  font-size: 18px;
+}
+
+.logout-text {
+  font-size: 14px;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 24px;
+  margin-left: 240px; /* deja espacio para la sidebar fija */
+  min-height: 100vh;
+  width: calc(100% - 240px);
+}

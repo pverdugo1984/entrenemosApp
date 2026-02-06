@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/config/api.config.ts"],
+  "sourcesContent": ["// Configuración de la API del backend\r\nexport const API_BASE_URL = \"http://localhost:8080/api\";\r\n\r\n"],
+  "mappings": ";AACO,IAAM,eAAe;",
+  "names": []
+}
